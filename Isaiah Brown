@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class SortThreeNumbers {
+
+    public static void displaySortedNumbers(double num1, double num2, double num3) {
+        double temp;
+        
+        // Sort num1 and num2
+        if (num1 > num2) {
+            temp = num1;
+            num1 = num2;
+            num2 = temp;
+        }
+        
+        // Sort num2 and num3
+        if (num2 > num3) {
+            temp = num2;
+            num2 = num3;
+            num3 = temp;
+        }
+        
+        // Sort num1 and num2 again
+        if (num1 > num2) {
+            temp = num1;
+            num1 = num2;
+            num2 = temp;
+        }
+
+        System.out.println("The numbers in increasing order are: " + num1 + " " + num2 + " " + num3);
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        // Prompt user for three numbers
+        System.out.print("Enter three numbers: ");
+        double num1 = input.nextDouble();
+        double num2 = input.nextDouble();
+        double num3 = input.nextDouble();
+        
+        // Display the numbers in sorted order
+        displaySortedNumbers(num1, num2, num3);
+    }
+}
